@@ -1,0 +1,136 @@
+/* Custom CSS for AI Leaf Disease Detection System */
+
+/* Global Styles */
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* Severity Colors */
+.severity-low {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.severity-moderate {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.severity-severe {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.severity-none {
+    color: #2196f3;
+    font-weight: bold;
+}
+
+/* Confidence Progress Bar */
+.confidence-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.confidence-bar {
+    height: 12px;
+    background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+    border-radius: 8px;
+    transition: width 1s ease-in-out;
+}
+
+/* Custom Headers */
+h1, h2, h3 {
+    color: #2e7d32;
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background-color: #ffffff !important;
+    border-right: 1px solid #e0e0e0;
+}
+
+.sidebar-stat {
+    text-align: center;
+    padding: 16px;
+    background: #f1f8e9;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.sidebar-stat-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: #2e7d32;
+}
+
+.sidebar-stat-label {
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Uploader customization */
+[data-testid="stFileUploadDropzone"] {
+    border: 2px dashed #4caf50 !important;
+    border-radius: 16px !important;
+    background-color: rgba(76, 175, 80, 0.05) !important;
+}
+
+/* Dark mode adjustments (Streamlit handles dark mode classes automatically, 
+   but we can target some specifics if needed) */
+@media (prefers-color-scheme: dark) {
+    .stApp {
+        background: linear-gradient(135deg, #121212 0%, #1b5e20 100%);
+    }
+    
+    .glass-card {
+        background: rgba(30, 30, 30, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    [data-testid="stSidebar"] {
+        background-color: #1e1e1e !important;
+        border-right: 1px solid #333;
+    }
+
+    h1, h2, h3 {
+        color: #81c784;
+    }
+
+    .sidebar-stat {
+        background: #2e2e2e;
+    }
+    
+    .sidebar-stat-number {
+        color: #81c784;
+    }
+    
+    .sidebar-stat-label {
+        color: #bbb;
+    }
+}
