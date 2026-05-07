@@ -1,72 +1,275 @@
-# AI Leaf Disease Detection System
+<div align="center">
 
-An AI-powered web application that detects plant diseases from leaf images using Groq's Llama Vision AI model. It provides severity scores, confidence levels, treatment plans, and prevention tips.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:11998e,50:38ef7d,100:0575E6&height=220&section=header&text=AI%20Leaf%20Disease%20Detection&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38"/>
 
-## Tech Stack
-- **Backend**: Python, FastAPI
-- **Frontend**: Streamlit
-- **AI Model**: Groq API (`llama-3.2-11b-vision-preview`)
-- **Deployment**: Vercel (Backend), Streamlit Community Cloud (Frontend)
+# 🌿 AI Leaf Disease Detection System
 
-## Features
-- **Accurate Detection**: 89.7% claimed diagnostic accuracy.
-- **Wide Range**: Capable of detecting 500+ plant diseases.
-- **Actionable Insights**: Get specific treatment recommendations and prevention tips.
-- **Modern UI**: Responsive layout with dark/light mode and glassmorphism styling.
+### ⚡ AI-Powered Plant Disease Detection using Groq Llama Vision
 
-## Local Setup Instructions
+<br>
 
-### 1. Clone the repository
+<img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python" />
+<img src="https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge&logo=fastapi" />
+<img src="https://img.shields.io/badge/Streamlit-Frontend-red?style=for-the-badge&logo=streamlit" />
+<img src="https://img.shields.io/badge/Groq-AI-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Vercel-Deployment-black?style=for-the-badge&logo=vercel" />
+<img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" />
+
+<br><br>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=24&duration=3000&pause=1000&color=38EF7D&center=true&vCenter=true&width=800&lines=AI-Powered+Leaf+Disease+Detection;FastAPI+%2B+Streamlit+%2B+Groq+Vision;Real-Time+Plant+Disease+Analysis;Severity+Scoring+and+Treatment+Suggestions" />
+
+</div>
+
+---
+
+# 🌱 About The Project
+
+An AI-powered web application that detects plant diseases from uploaded leaf images using **Groq’s Llama Vision AI model**.
+
+The system provides:
+
+- 🔍 Disease Prediction  
+- 📊 Severity Analysis  
+- ⚡ Confidence Scoring  
+- 💊 Treatment Recommendations  
+- 🌿 Prevention Tips  
+
+This solution helps farmers, researchers, and agriculture students identify plant diseases quickly and efficiently.
+
+---
+
+<div align="center">
+
+# 🚀 Features & Tech Stack
+
+| 🚀 Features | 🛠️ Tech Stack |
+|---|---|
+| 🔍 AI-powered leaf disease detection | Python |
+| 🤖 Groq Llama Vision integration | FastAPI |
+| 📊 Severity & confidence analysis | Streamlit |
+| 💊 Treatment recommendations | Groq API |
+| ⚡ Real-time prediction system | Llama Vision |
+| 🎨 Modern responsive UI | Vercel |
+| 🌗 Dark/Light mode support | Git & GitHub |
+| 🌿 Fast and accurate predictions | Streamlit Cloud |
+
+</div>
+
+---
+
+# 🧠 System Architecture
+
+```text
+Leaf Image Upload
+        ↓
+Streamlit Frontend
+        ↓
+FastAPI Backend
+        ↓
+Groq Llama Vision API
+        ↓
+Disease Analysis Engine
+        ↓
+Prediction + Severity + Treatment
+```
+
+---
+
+# 📂 Project Structure
+
 ```bash
-git clone <your-repo-url>
+AI-Leaf-Disease-Detection/
+│
+├── backend/
+│   ├── main.py
+│   ├── routes/
+│   │   └── predict.py
+│   ├── services/
+│   │   └── groq_service.py
+│   ├── utils/
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── app.py
+│   └── assets/
+│
+├── screenshots/
+│   ├── home.png
+│   └── result.png
+│
+├── .env.example
+├── requirements.txt
+├── README.md
+├── vercel.json
+└── .gitignore
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone <your-repository-url>
 cd "AI Leaf Disease"
 ```
 
-### 2. Set up Virtual Environment
+---
+
+## 2️⃣ Create Virtual Environment
+
 ```bash
 python -m venv venv
-source venv/bin/activate # On Windows use: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### Activate Environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Environment Variables
-Create a `.env` file in the root directory based on `.env.example`:
+---
+
+## 4️⃣ Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 BACKEND_URL=http://localhost:8000
 ```
-*Note: Get your Groq API key from [Groq Console](https://console.groq.com/keys).*
 
-### 5. Run the Application
+Get your API key from:
 
-**Start the FastAPI Backend:**
+https://console.groq.com/keys
+
+---
+
+# ▶️ Run the Application
+
+## 🚀 Start FastAPI Backend
+
 ```bash
-uvicorn backend.main:app --reload
+python -m uvicorn backend.main:app --reload
 ```
-The backend will be available at `http://localhost:8000`. You can view the API documentation at `http://localhost:8000/docs`.
 
-**Start the Streamlit Frontend:**
-Open a new terminal window, activate the virtual environment, and run:
+### Backend URL
+
 ```bash
-streamlit run frontend/app.py
+http://localhost:8000
 ```
-The frontend will open in your browser at `http://localhost:8501`.
 
-## Deployment
+### Swagger API Docs
 
-### Deploy Backend to Vercel
-1. Install the Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in the project root directory.
-3. Configure the `GROQ_API_KEY` environment variable in the Vercel dashboard.
-4. The provided `vercel.json` will automatically configure the FastAPI app as a serverless function.
+```bash
+http://localhost:8000/docs
+```
 
-### Deploy Frontend to Streamlit Community Cloud
-1. Push your code to GitHub.
-2. Go to [Streamlit Community Cloud](https://share.streamlit.io/).
-3. Click "New app", select your repository, and set the main file path to `frontend/app.py`.
-4. Add the `BACKEND_URL` environment variable pointing to your deployed Vercel URL in the advanced settings.
-5. Click "Deploy".
+---
+
+## 🎨 Start Streamlit Frontend
+
+Open another terminal:
+
+```bash
+python -m streamlit run frontend/app.py
+```
+
+### Frontend URL
+
+```bash
+http://localhost:8501
+```
+
+---
+
+# 📸 Screenshots
+
+<div align="center">
+
+## 🌿 Home Page
+
+<img width="90%" src="./Screenshots/home.png">
+
+<br><br>
+
+## 🔍 Disease Prediction Result
+
+<img width="90%" src="./Screenshots/result.png">
+
+</div>
+---
+
+<div align="center">
+
+# 📈 Performance Metrics
+
+| Metric | Value |
+|---|---|
+| ✅ Accuracy | 89.7% |
+| ⚡ Inference Time | < 5 Seconds |
+| 🌿 Supported Diseases | 500+ |
+| 🚀 Backend Framework | FastAPI |
+| 🤖 AI Model | Llama Vision |
+
+</div>
+
+---
+
+# 🚀 Deployment
+
+## Backend Deployment
+- Vercel  
+- Railway  
+- Render  
+
+## Frontend Deployment
+- Streamlit Community Cloud  
+
+---
+
+# 🔮 Future Enhancements
+
+- 📱 Mobile App Integration  
+- 🌍 Multi-language Support  
+- 📷 Real-time Camera Detection  
+- ☁️ Cloud Database Integration  
+- 📊 AI Analytics Dashboard  
+
+---
+
+<div align="center">
+
+# 👨‍💻 Developed With ❤️ Using Python, FastAPI & Groq AI
+
+<br>
+
+### ⭐ Star this repository if you found it useful!
+
+</div>
+
+---
+
+<div align="center">
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0575E6,50:38ef7d,100:11998e&height=120&section=footer"/>
+
+</div>
